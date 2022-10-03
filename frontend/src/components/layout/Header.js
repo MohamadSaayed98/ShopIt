@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 
 import { logout } from "../../actions/userActions";
 
@@ -11,7 +11,7 @@ import Search from "./Search";
 const Header = () => {
   const [toggle, setToggle] = useState(false);
 
-  const alert = useAlert();
+  // const alert = useAlert();
   const dispatch = useDispatch();
 
   const { user, loading } = useSelector((state) => state.auth);
@@ -20,7 +20,7 @@ const Header = () => {
   const logoutHandler = () => {
     dispatch(logout());
     setToggle(false);
-    alert.success("Logout successfully");
+    // alert.success("Logout successfully");
   };
 
   const toggleHandler = (e) => {

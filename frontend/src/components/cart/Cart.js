@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 
 import MetaData from "../layout/MetaData";
@@ -9,14 +9,14 @@ import { addItemToCart, removeCartItem } from "../../actions/cartActions";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const alert = useAlert();
+  // const alert = useAlert();
   const navigate = useNavigate();
 
   const { cartItems } = useSelector((state) => state.cart);
 
   const removeCartItemHandler = (id) => {
     dispatch(removeCartItem(id));
-    alert.success("Item Removed");
+    // alert.success("Item Removed");
   };
 
   const increaseQty = (id, quantity, stock) => {

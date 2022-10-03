@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import Loader from "../layout/Loader";
 import MetaData from "../layout/MetaData";
 
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login, clearErrors } from "../../actions/userActions";
@@ -13,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const alert = useAlert();
+  // const alert = useAlert();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,7 +29,7 @@ const Login = () => {
 
   useEffect(() => {
     if (error) {
-      alert.error("Email or Password is incorrect");
+      // alert.error("Email or Password is incorrect");
       dispatch(clearErrors());
     }
 
@@ -38,14 +38,13 @@ const Login = () => {
         alert.success(`Redirected to ${location.state.from.pathname}`);
         navigate(location.state?.from.pathname);
       } else {
-        alert.success("You logged in successfully");
+        // alert.success("You logged in successfully");
         navigate(options, { replace: true });
       }
     }
   }, [
     dispatch,
     error,
-    alert,
     isAuthenticated,
     loading,
     navigate,

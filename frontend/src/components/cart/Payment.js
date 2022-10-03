@@ -3,7 +3,7 @@ import React, { Fragment, useEffect } from "react";
 import MetaData from "../layout/MetaData";
 import CheckoutSteps from "./CheckoutSteps";
 
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -33,7 +33,7 @@ const options = {
 const Payment = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const alert = useAlert();
+  // const alert = useAlert();
   const stripe = useStripe();
   const elements = useElements();
 
@@ -43,10 +43,10 @@ const Payment = () => {
 
   useEffect(() => {
     if (error) {
-      alert.error(error);
+      // alert.error(error);
       dispatch(clearErrors());
     }
-  }, [alert, dispatch, error]);
+  }, [dispatch, error]);
 
   const order = {
     orderItems: cartItems,
@@ -97,7 +97,7 @@ const Payment = () => {
       });
 
       if (result.error) {
-        alert.error(result.error.message);
+        // alert.error(result.error.message);
         document.querySelector("#pay_btn").disable = false;
       } else {
         //the payment is processed or not
@@ -116,7 +116,7 @@ const Payment = () => {
       }
     } catch (err) {
       document.querySelector("#pay_btn").disable = false;
-      alert.error("Something Went Wrong");
+      // alert.error("Something Went Wrong");
       console.log(err);
     }
   };

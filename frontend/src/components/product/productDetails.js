@@ -5,7 +5,7 @@ import MetaData from "../layout/MetaData";
 
 import { Carousel, Modal, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getProductDetails,
@@ -29,7 +29,7 @@ const ProductDetails = () => {
   // const handleShow = () => setShow(true);
 
   const dispach = useDispatch();
-  const alert = useAlert();
+  // const alert = useAlert();
   const params = useParams();
 
   const { loading, error, product } = useSelector(
@@ -43,20 +43,20 @@ const ProductDetails = () => {
   useEffect(() => {
     dispach(getProductDetails(params.id));
     if (error) {
-      alert.error(error);
+      // alert.error(error);
       dispach(clearErrors());
     }
 
     if (reviewError) {
-      alert.error(reviewError);
+      // alert.error(reviewError);
       dispach(clearErrors());
     }
 
     if (success) {
-      alert.success("Review posted successfully");
+      // alert.success("Review posted successfully");
       dispach({ type: NEW_REVIEW_RESET });
     }
-  }, [dispach, alert, error, params.id, reviewError, success]);
+  }, [dispach, error, params.id, reviewError, success]);
 
   const increaseQty = () => {
     const count = document.querySelector(".count");

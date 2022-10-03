@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 
 import { Link, useParams } from "react-router-dom";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 
 import MetaData from "../layout/MetaData";
@@ -10,7 +10,7 @@ import Loader from "../layout/Loader";
 import { getOrderDetails, clearErrors } from "../../actions/orderActions";
 
 const OrderDetails = () => {
-  const alert = useAlert();
+  // const alert = useAlert();
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -33,10 +33,10 @@ const OrderDetails = () => {
     dispatch(getOrderDetails(params.id));
 
     if (error) {
-      alert.error(error);
+      // alert.error(error);
       dispatch(clearErrors());
     }
-  }, [alert, dispatch, error, params.id]);
+  }, [dispatch, error, params.id]);
 
   const shippingDetails =
     shippingInfo &&

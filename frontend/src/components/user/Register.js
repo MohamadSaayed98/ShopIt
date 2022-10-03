@@ -3,7 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import MetaData from "../layout/MetaData";
 import { useNavigate } from "react-router-dom";
 
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { register, clearErrors } from "../../actions/userActions";
 
@@ -21,7 +21,7 @@ const Register = () => {
     "/images/default_user.jpg"
   );
 
-  const alert = useAlert();
+  // const alert = useAlert();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -36,15 +36,15 @@ const Register = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      alert.success("welcome to shopIt");
+      // alert.success("welcome to shopIt");
       navigate(options, { replace: true });
     }
 
     if (error) {
-      alert.error("Something went wrong");
+      // alert.error("Something went wrong");
       dispatch(clearErrors());
     }
-  }, [dispatch, alert, isAuthenticated, error, navigate, options]);
+  }, [dispatch, isAuthenticated, error, navigate, options]);
 
   const submitHandler = (e) => {
     e.preventDefault();

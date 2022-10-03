@@ -11,7 +11,7 @@ import Product from "./product/Product";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useParams } from "react-router-dom";
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -37,7 +37,7 @@ const Home = () => {
     "Home",
   ];
 
-  const alert = useAlert();
+  // const alert = useAlert();
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -57,7 +57,7 @@ const Home = () => {
     }
 
     dispatch(getProducts(keyword, currentPage, price, category));
-  }, [dispatch, alert, error, keyword, currentPage, price, category]);
+  }, [dispatch, error, keyword, currentPage, price, category]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);

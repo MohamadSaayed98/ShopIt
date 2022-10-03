@@ -3,7 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader";
 
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const UpdateProfile = () => {
   const [avatar, setAvatar] = useState("");
 
   const dispatch = useDispatch();
-  const alert = useAlert();
+  // const alert = useAlert();
   const navigate = useNavigate();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,12 +44,12 @@ const UpdateProfile = () => {
     }
 
     if (error) {
-      alert.error("Something went wrong");
+      // alert.error("Something went wrong");
       dispatch(clearErrors());
     }
 
     if (isUpdated) {
-      alert.success("user updated successfully");
+      // alert.success("user updated successfully");
 
       dispatch(loadUser());
 
@@ -59,7 +59,7 @@ const UpdateProfile = () => {
         type: UPDATE_PROFILE_RESET,
       });
     }
-  }, [dispatch, alert, navigate, error, isUpdated, user, options]);
+  }, [dispatch, navigate, error, isUpdated, user, options]);
 
   //submit handler
   const submitHandler = (e) => {

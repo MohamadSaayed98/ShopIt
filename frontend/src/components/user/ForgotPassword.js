@@ -3,7 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import MetaData from "../layout/MetaData";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 // import { useNavigate } from "react-router-dom";
 
 import { forgotPassword, clearErrors } from "../../actions/userActions";
@@ -12,7 +12,7 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 
   const dispatch = useDispatch();
-  const alert = useAlert();
+  // const alert = useAlert();
   //   const navigate = useNavigate();
 
   const { error, loading, message } = useSelector(
@@ -21,14 +21,14 @@ const ForgotPassword = () => {
 
   useEffect(() => {
     if (error) {
-      alert.error("something went wrong");
+      // alert.error("something went wrong");
       dispatch(clearErrors());
     }
 
     if (message) {
-      alert.success(message);
+      // alert.success(message);
     }
-  }, [dispatch, alert, error, message]);
+  }, [dispatch,  error, message]);
 
   //submit handler
   const submitHandler = (e) => {
