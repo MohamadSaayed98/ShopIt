@@ -26,7 +26,7 @@ const ProductDetails = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   const dispach = useDispatch();
   const alert = useAlert();
@@ -35,7 +35,7 @@ const ProductDetails = () => {
   const { loading, error, product } = useSelector(
     (state) => state.productDetails
   );
-  const { user } = useSelector((state) => state.auth);
+  // const { user } = useSelector((state) => state.auth);
   const { error: reviewError, success } = useSelector(
     (state) => state.newReview
   );
